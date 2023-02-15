@@ -1,0 +1,43 @@
+$ touch names.txt
+$ vi sample.txt
+guna 
+guna 
+siva 
+raju
+hanvi
+chchu
+hanvi 
+sweety
+balu
+shiva 
+balu
+raju
+sweety
+shiva
+guna
+hanvi
+$ sort names.txt
+chuchu
+balu
+balu
+guna
+guna
+guna
+hanvi
+hanvi
+hanvi
+raju
+raju
+shiva
+shiva
+shiva
+sweety
+sweety
+$ sort names.txt | unique -c
+1 chuchu
+2 balu
+3 guna
+3 hanvi
+2 raju
+3 shiva
+2 sweety
