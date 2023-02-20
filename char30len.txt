@@ -1,0 +1,31 @@
+1. To print the lines having greater than 30 characters in File1.txt:
+
+grep -E '.{31,}' File1.txt
+
+
+This command uses the grep tool with the -E option to enable extended regular expressions, and the pattern 
+.{31,} to match any line that has 31 or more characters
+
+
+2.To remove the lines having greater than 30 characters and store them in File2.txt
+
+
+grep -vE '.{31,}' File1.txt > File2.txt
+
+
+This command uses the grep tool with the -v option to invert the matching, 
+so that it selects all the lines that do not match the pattern
+ .{31,}, i.e., the lines that have less than or equal to 30 characters.
+ The output is redirected to the file File2.txt using the > operator.
+
+3.To remove the dot (.) or end period if it is at the end of each line and store the result in File3.txt:
+
+sed 's/\(\.\)\{0,1\}$//' File2.txt > File3.txt
+
+This command uses the sed tool with the s (substitute) command to replace any dot (.) or end period at the end of each line (i.e., zero or one occurrence) with nothing (i.e., an empty string). 
+The output is redirected to the file File3.txt using the > operator.
+
+
+
+
+grep -vE '.{31,}' File1.txt > File2.txt sed 's/\(\.\)\{0,1\}$//' File2.txt > File3.txt
